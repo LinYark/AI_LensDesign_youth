@@ -1,21 +1,19 @@
-#include<stdio.h>
-
-int max(int a,int b)
-{  
-    if(a>b)
-    {
-        return a;
-    }
-    else
-    {
-        return b;
-    }
-}
+#include <iostream>
+using namespace std;
 
 int main()
 {
-    int a1 = 10, b1 = 20, c1 = 0;
-    c1 = max(a1,b1);
-    printf("c1=%d\n",c1);
-    return 0;
+    const int n = 8;
+    int arr[n] = {1, 7, 5, 1, 9, 4, 7, 8};
+
+    int newArr[n];
+    for (int i = 0; i < n; i++)
+    {
+        newArr[n - i - 1] = arr[i];
+    }
+
+    for (int num : newArr)
+    {
+        cout << num << endl;
+    }
 }
