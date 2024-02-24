@@ -1,19 +1,28 @@
 #include <iostream>
+#include <string>
 using namespace std;
+int countnumber(string str, char a);
 
 int main()
 {
-    const int n = 8;
-    int arr[n] = {3, 7, 5, 1, 9, 4, 7, 8};
+    string str;
+    char a;
+    int n;
+    getline(cin, str);
+    cin >> a;
+    n = countnumber(str, a);
+    cout << n << endl;
+}
 
-    int newArr[n];
-    for (int i = 0; i < n; i++)
+int countnumber(string str, char a)
+{
+    int n = 0;
+    for (int i = 0; i < str.size() + 1; i++)
     {
-        newArr[n - i - 1] = arr[i];
+        if ((str[i] == a) || (str[i] == toupper(a)) || (str[i] == tolower(a)))
+        {
+            n += 1;
+        }
     }
-
-    for (int num : newArr)
-    {
-        cout << num << endl;
-    }
+    return n;
 }
